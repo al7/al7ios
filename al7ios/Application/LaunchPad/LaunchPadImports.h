@@ -9,3 +9,5 @@
 #import "ALLayoutUtilities.h"
 #import "ALColorUtilities.h"
 #import "TestbedController.h"
+#import "DemoFlipViewController.h"
+#import "DemoTooltipController.h"

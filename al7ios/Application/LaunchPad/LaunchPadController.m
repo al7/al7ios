@@ -20,7 +20,6 @@
 
 #import "LaunchPadController.h"
 #import "LaunchPadImports.h"
-#import "DemoFlipViewController.h"
 
 @implementation LaunchPadController
 
@@ -126,6 +125,9 @@
         case 0:
             result = @"ALFlipView";
             break;
+        case 1:
+            result = @"Tooltip";
+            break;
     }
     return result;
 }
@@ -139,7 +141,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 1;
+    return 2;
 };
 
 #pragma mark - Redirector Methods;
@@ -152,6 +154,10 @@
             targetRootController = nil;
             targetController = [[DemoFlipViewController alloc] init];
             break;
+        case 1:
+            targetRootController = nil;
+            targetController = [[DemoTooltipController alloc] init];
+            break;            
         default:
             targetRootController = nil;
             targetController = nil;

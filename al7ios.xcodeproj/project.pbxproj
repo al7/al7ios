@@ -70,6 +70,9 @@
 		131191C5158061200022A809 /* LaunchPad_Bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 131191C3158061200022A809 /* LaunchPad_Bg@2x.png */; };
 		131191C8158075CD0022A809 /* Demo_Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 131191C6158075CD0022A809 /* Demo_Bg.png */; };
 		131191C9158075CD0022A809 /* Demo_Bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 131191C7158075CD0022A809 /* Demo_Bg@2x.png */; };
+		1397128B158BFED5004145B0 /* img_tooltip_demo_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 13971289158BFED5004145B0 /* img_tooltip_demo_iphone.png */; };
+		1397128C158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */; };
+		13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1397128F158BFF1B004145B0 /* DemoTooltipController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +170,10 @@
 		131191C3158061200022A809 /* LaunchPad_Bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchPad_Bg@2x.png"; sourceTree = "<group>"; };
 		131191C6158075CD0022A809 /* Demo_Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Demo_Bg.png; sourceTree = "<group>"; };
 		131191C7158075CD0022A809 /* Demo_Bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Demo_Bg@2x.png"; sourceTree = "<group>"; };
+		13971289158BFED5004145B0 /* img_tooltip_demo_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_tooltip_demo_iphone.png; sourceTree = "<group>"; };
+		1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_tooltip_demo_iphone@2x.png"; sourceTree = "<group>"; };
+		1397128E158BFF1B004145B0 /* DemoTooltipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTooltipController.h; sourceTree = "<group>"; };
+		1397128F158BFF1B004145B0 /* DemoTooltipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTooltipController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +471,7 @@
 		131191B015804CA00022A809 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				13971287158BFED5004145B0 /* Tooltip */,
 				131191B215804CAD0022A809 /* FlipView */,
 				131191B115804CA70022A809 /* Base */,
 			);
@@ -496,6 +504,26 @@
 				131191C7158075CD0022A809 /* Demo_Bg@2x.png */,
 				131191C2158061200022A809 /* LaunchPad_Bg.png */,
 				131191C3158061200022A809 /* LaunchPad_Bg@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		13971287158BFED5004145B0 /* Tooltip */ = {
+			isa = PBXGroup;
+			children = (
+				13971288158BFED5004145B0 /* Images */,
+				1397128E158BFF1B004145B0 /* DemoTooltipController.h */,
+				1397128F158BFF1B004145B0 /* DemoTooltipController.m */,
+			);
+			name = Tooltip;
+			path = Demo/Tooltip;
+			sourceTree = "<group>";
+		};
+		13971288158BFED5004145B0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				13971289158BFED5004145B0 /* img_tooltip_demo_iphone.png */,
+				1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -587,6 +615,8 @@
 				130DAD4F15888F1300CB0D8B /* img_flipview_demo_01@2x.png in Resources */,
 				130DAD5015888F1300CB0D8B /* img_flipview_demo_02.png in Resources */,
 				130DAD5115888F1300CB0D8B /* img_flipview_demo_02@2x.png in Resources */,
+				1397128B158BFED5004145B0 /* img_tooltip_demo_iphone.png in Resources */,
+				1397128C158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +652,7 @@
 				131191AF15804C320022A809 /* TestbedSettingsController.m in Sources */,
 				131191B515804CD80022A809 /* DemoBaseViewController.m in Sources */,
 				131191B815804CFF0022A809 /* DemoFlipViewController.m in Sources */,
+				13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

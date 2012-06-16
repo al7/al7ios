@@ -152,7 +152,7 @@
             break;
         case ALBubbleViewColorSchemeLightRed:
             borderColor = [ALColorUtilities rgbColorWithRed:204 green:0 blue:0 alpha:1.0];
-            topColor = [ALColorUtilities rgbColorWithRed:205 green:220 blue:220 alpha:1.0];
+            topColor = [ALColorUtilities rgbColorWithRed:255 green:204 blue:204 alpha:1.0];
             bottomColor = [ALColorUtilities rgbColorWithRed:255 green:255 blue:255 alpha:1.0];
             break;            
         default:
