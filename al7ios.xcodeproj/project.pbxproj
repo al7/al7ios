@@ -73,6 +73,7 @@
 		1397128B158BFED5004145B0 /* img_tooltip_demo_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 13971289158BFED5004145B0 /* img_tooltip_demo_iphone.png */; };
 		1397128C158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */; };
 		13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1397128F158BFF1B004145B0 /* DemoTooltipController.m */; };
+		13971294158C1086004145B0 /* DemoModalMatteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13971293158C1086004145B0 /* DemoModalMatteController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,6 +175,8 @@
 		1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_tooltip_demo_iphone@2x.png"; sourceTree = "<group>"; };
 		1397128E158BFF1B004145B0 /* DemoTooltipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTooltipController.h; sourceTree = "<group>"; };
 		1397128F158BFF1B004145B0 /* DemoTooltipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTooltipController.m; sourceTree = "<group>"; };
+		13971292158C1086004145B0 /* DemoModalMatteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoModalMatteController.h; path = Demo/ModalMatte/DemoModalMatteController.h; sourceTree = "<group>"; };
+		13971293158C1086004145B0 /* DemoModalMatteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoModalMatteController.m; path = Demo/ModalMatte/DemoModalMatteController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +474,7 @@
 		131191B015804CA00022A809 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				13971291158C1043004145B0 /* ModalMatte */,
 				13971287158BFED5004145B0 /* Tooltip */,
 				131191B215804CAD0022A809 /* FlipView */,
 				131191B115804CA70022A809 /* Base */,
@@ -526,6 +530,15 @@
 				1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		13971291158C1043004145B0 /* ModalMatte */ = {
+			isa = PBXGroup;
+			children = (
+				13971292158C1086004145B0 /* DemoModalMatteController.h */,
+				13971293158C1086004145B0 /* DemoModalMatteController.m */,
+			);
+			name = ModalMatte;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -653,6 +666,7 @@
 				131191B515804CD80022A809 /* DemoBaseViewController.m in Sources */,
 				131191B815804CFF0022A809 /* DemoFlipViewController.m in Sources */,
 				13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */,
+				13971294158C1086004145B0 /* DemoModalMatteController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

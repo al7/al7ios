@@ -126,7 +126,10 @@
             result = @"ALFlipView";
             break;
         case 1:
-            result = @"Tooltip";
+            result = @"ALTooltip";
+            break;
+        case 2:
+            result = @"ALModalMatte";
             break;
     }
     return result;
@@ -141,7 +144,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 2;
+    return 3;
 };
 
 #pragma mark - Redirector Methods;
@@ -158,6 +161,10 @@
             targetRootController = nil;
             targetController = [[DemoTooltipController alloc] init];
             break;            
+        case 2:
+            targetRootController = nil;
+            targetController = [[DemoModalMatteController alloc] init];
+            break;                        
         default:
             targetRootController = nil;
             targetController = nil;
