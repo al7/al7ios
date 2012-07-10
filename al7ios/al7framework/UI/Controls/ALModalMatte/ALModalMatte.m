@@ -32,7 +32,7 @@
 }
 
 -(id)initWithGradientCenter:(CGPoint)aGradientCenter gradientRadius:(CGFloat)aGradientRadius {
-    self = [super initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    self = [super initWithFrame:[[UIScreen mainScreen] bounds]];
     if (self) {
         //- set properties;
         [self setGradientCenter:aGradientCenter];

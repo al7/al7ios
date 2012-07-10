@@ -20,6 +20,7 @@
 
 #import "ALTooltip.h"
 #import "ALLayoutUtilities.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ALTooltip
 
@@ -124,7 +125,7 @@
         }
         
         //- create and place bubble and modal matte;
-        ALModalMatte *newModalMatte = [[ALModalMatte alloc] initWithGradientCenter:CGPointMake(tooltipCenterX, tooltipCenterY) gradientRadius:90.0];
+        ALModalMatte *newModalMatte = [[ALModalMatte alloc] initWithGradientCenter:CGPointMake(tooltipCenterX, tooltipCenterY) gradientRadius:150.0];
         [newModalMatte setAlpha:0.0];
         [[self window] addSubview:newModalMatte];
         [self setModalMatte:newModalMatte];
@@ -140,6 +141,17 @@
 
         //- fade bubble and modal matte in;
         [[NSNotificationCenter defaultCenter] postNotificationName:ALTooltipWillShowBubbleNotification object:self];
+        
+        CAKeyframeAnimation *bubbleBounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+        NSMutableArray *bubbleBounceValues = [NSMutableArray array];
+        [bubbleBounceValues addObject:[NSNumber numberWithFloat:0.5]];
+        [bubbleBounceValues addObject:[NSNumber numberWithFloat:1.2]];
+        [bubbleBounceValues addObject:[NSNumber numberWithFloat:0.8]];        
+        [bubbleBounceValues addObject:[NSNumber numberWithFloat:1.0]]; 
+        [bubbleBounceAnimation setValues:bubbleBounceValues];
+        [bubbleBounceAnimation setDuration:0.28];
+        [[newBubble layer] addAnimation:bubbleBounceAnimation forKey:@"bounceAnimation"];
+        
         [UIView animateWithDuration:0.3 animations:^{
             [newBubble setAlpha:1.0];
             [newModalMatte setAlpha:1.0];

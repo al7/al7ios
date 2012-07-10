@@ -74,6 +74,7 @@
 		1397128C158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */; };
 		13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1397128F158BFF1B004145B0 /* DemoTooltipController.m */; };
 		13971294158C1086004145B0 /* DemoModalMatteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13971293158C1086004145B0 /* DemoModalMatteController.m */; };
+		2BE0930515ACC01E00072B89 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE0930415ACC01E00072B89 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +178,7 @@
 		1397128F158BFF1B004145B0 /* DemoTooltipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTooltipController.m; sourceTree = "<group>"; };
 		13971292158C1086004145B0 /* DemoModalMatteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoModalMatteController.h; path = Demo/ModalMatte/DemoModalMatteController.h; sourceTree = "<group>"; };
 		13971293158C1086004145B0 /* DemoModalMatteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoModalMatteController.m; path = Demo/ModalMatte/DemoModalMatteController.m; sourceTree = "<group>"; };
+		2BE0930415ACC01E00072B89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE0930515ACC01E00072B89 /* QuartzCore.framework in Frameworks */,
 				13119107158040710022A809 /* UIKit.framework in Frameworks */,
 				13119109158040710022A809 /* Foundation.framework in Frameworks */,
 				1311910B158040710022A809 /* CoreGraphics.framework in Frameworks */,
@@ -229,6 +232,7 @@
 		13119105158040710022A809 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BE0930415ACC01E00072B89 /* QuartzCore.framework */,
 				13119106158040710022A809 /* UIKit.framework */,
 				13119108158040710022A809 /* Foundation.framework */,
 				1311910A158040710022A809 /* CoreGraphics.framework */,
