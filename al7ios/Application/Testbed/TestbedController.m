@@ -158,7 +158,7 @@
     testbedSettingsController = [[TestbedSettingsController alloc] initWithArguments:arguments];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTestbedSettingsControllerValuesSaved:) name:TestbedSettingsControllerValuesSavedNotification object:testbedSettingsController];
     
-    [self presentModalViewController:testbedSettingsController animated:YES];
+    [self presentViewController:testbedSettingsController animated:YES completion:nil];
 }
 
 #pragma mark - Notification Responders;
@@ -175,7 +175,7 @@
 }
 
 -(void)onDismissButtonTouch:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)onSegmentedControlValueChanged:(id)sender {

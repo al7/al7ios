@@ -27,16 +27,16 @@
     NSString *result;
     switch (type) {
         case ALStringSpecialCharacterTypeCopyright:
-            result = [NSString stringWithString:@"©"];
+            result = @"©";
             break;
         case ALStringSpecialCharacterTypeRegisteredMark:
-            result = [NSString stringWithString:@"®"];
+            result = @"®";
             break;
         case ALStringSpecialCharacterTypeTrademark:
-            result = [NSString stringWithString:@"™"];
+            result = @"™";
             break;
         case ALStringSpecialCharacterTypePi:
-            result = [NSString stringWithString:@"π"];
+            result = @"π";
             break;
         default:
             result = [NSString string];

@@ -47,7 +47,7 @@
         [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0]];
         [label setTextColor:[UIColor whiteColor]];
         [label setBackgroundColor:[UIColor clearColor]];
-        [label setTextAlignment:UITextAlignmentCenter];
+        [label setTextAlignment:NSTextAlignmentCenter];
         [label setText:[self title]];
         [progressContainerView addSubview:label];
         

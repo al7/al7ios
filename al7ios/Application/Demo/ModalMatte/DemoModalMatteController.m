@@ -35,7 +35,7 @@
     [instructionsLabel setTextColor:[UIColor whiteColor]];
     [instructionsLabel setShadowColor:[UIColor blackColor]];
     [instructionsLabel setShadowOffset:CGSizeMake(0.0, 1.0)];
-    [instructionsLabel setTextAlignment:UITextAlignmentCenter];
+    [instructionsLabel setTextAlignment:NSTextAlignmentCenter];
     [instructionsLabel setNumberOfLines:0];
     [instructionsLabel setText:@"The modal matte gives you a nice,\nsubtle spotlight effect.\n\nTap inside this rectangle to\nsee modal matte.\n\nTo dismiss the matte, just\ntap the screen again.\n\nUse the slider below to\nchange gradient radius."];
     [contentView addSubview:instructionsLabel];

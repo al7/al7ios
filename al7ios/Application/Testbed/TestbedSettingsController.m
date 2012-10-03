@@ -84,7 +84,7 @@
     UILabel *testbedViewHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, labelY, 310.0, 24.0)];
     [testbedViewHeaderLabel setBackgroundColor:[UIColor clearColor]];
     [testbedViewHeaderLabel setFont:headerLabelFont];
-    [testbedViewHeaderLabel setTextAlignment:UITextAlignmentLeft];
+    [testbedViewHeaderLabel setTextAlignment:NSTextAlignmentLeft];
     [testbedViewHeaderLabel setTextColor:labelColor];
     [testbedViewHeaderLabel setText:@"Testbed View Scrolling Settings"];
     [[self view] addSubview:testbedViewHeaderLabel];
@@ -94,7 +94,7 @@
     UILabel *contentWidthLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, labelY, 100.0, 23.0)];
     [contentWidthLabel setFont:labelFont];
     [contentWidthLabel setBackgroundColor:[UIColor clearColor]];
-    [contentWidthLabel setTextAlignment:UITextAlignmentRight];
+    [contentWidthLabel setTextAlignment:NSTextAlignmentRight];
     [contentWidthLabel setTextColor:labelColor];
     [contentWidthLabel setText:@"Content Width:"];
     [[self view] addSubview:contentWidthLabel];
@@ -109,7 +109,7 @@
     contentWidthValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(265, labelY, 55.0, 23.0)];
     [contentWidthValueLabel setFont:labelFont];
     [contentWidthValueLabel setBackgroundColor:[UIColor clearColor]];    
-    [contentWidthValueLabel setTextAlignment:UITextAlignmentLeft];
+    [contentWidthValueLabel setTextAlignment:NSTextAlignmentLeft];
     [contentWidthValueLabel setTextColor:labelColor];
     [contentWidthValueLabel setText:@"--"];
     [[self view] addSubview:contentWidthValueLabel];
@@ -119,7 +119,7 @@
     UILabel *contentHeightLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, labelY, 100.0, 23.0)];
     [contentHeightLabel setFont:labelFont];
     [contentHeightLabel setBackgroundColor:[UIColor clearColor]];    
-    [contentHeightLabel setTextAlignment:UITextAlignmentRight];
+    [contentHeightLabel setTextAlignment:NSTextAlignmentRight];
     [contentHeightLabel setTextColor:labelColor];
     [contentHeightLabel setText:@"Content Height:"];
     [[self view] addSubview:contentHeightLabel];
@@ -134,7 +134,7 @@
     contentHeightValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(265, labelY, 55.0, 23.0)];
     [contentHeightValueLabel setFont:labelFont];
     [contentHeightValueLabel setBackgroundColor:[UIColor clearColor]];        
-    [contentHeightValueLabel setTextAlignment:UITextAlignmentLeft];
+    [contentHeightValueLabel setTextAlignment:NSTextAlignmentLeft];
     [contentHeightValueLabel setTextColor:labelColor];
     [contentHeightValueLabel setText:@"--"];
     [[self view] addSubview:contentHeightValueLabel];    
@@ -211,7 +211,7 @@
 
 -(void)onOkButtonTouch:(id)sender {
     [self saveValues];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)onSliderValueChange:(id)sender {

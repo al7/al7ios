@@ -175,13 +175,13 @@
             [[(UINavigationController *)targetController navigationBar] setTintColor:[ALColorUtilities rgbColorWithRed:0 green:103 blue:0 alpha:1.0]];
         }     
         [targetController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-        [self presentModalViewController:targetController animated:YES];
+        [self presentViewController:targetController animated:YES completion:nil];
     }
 }
 
 -(void)beginTestbed {
     TestbedController *targetController = [[TestbedController alloc] init];
-    [self presentModalViewController:targetController animated:YES];
+    [self presentViewController:targetController animated:YES completion:nil];
 }
 
 -(void)beginMemoryTest {

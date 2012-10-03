@@ -74,6 +74,7 @@
 		1397128C158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1397128A158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png */; };
 		13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1397128F158BFF1B004145B0 /* DemoTooltipController.m */; };
 		13971294158C1086004145B0 /* DemoModalMatteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13971293158C1086004145B0 /* DemoModalMatteController.m */; };
+		13E1765E161CD1DF00EA2BC0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E1765D161CD1DF00EA2BC0 /* Default-568h@2x.png */; };
 		2BE0930515ACC01E00072B89 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE0930415ACC01E00072B89 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +179,7 @@
 		1397128F158BFF1B004145B0 /* DemoTooltipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTooltipController.m; sourceTree = "<group>"; };
 		13971292158C1086004145B0 /* DemoModalMatteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoModalMatteController.h; path = Demo/ModalMatte/DemoModalMatteController.h; sourceTree = "<group>"; };
 		13971293158C1086004145B0 /* DemoModalMatteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoModalMatteController.m; path = Demo/ModalMatte/DemoModalMatteController.m; sourceTree = "<group>"; };
+		13E1765D161CD1DF00EA2BC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2BE0930415ACC01E00072B89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 		131190F7158040710022A809 = {
 			isa = PBXGroup;
 			children = (
+				13E1765D161CD1DF00EA2BC0 /* Default-568h@2x.png */,
 				131191BF158058220022A809 /* Default@2x.png */,
 				131191BD1580581D0022A809 /* Default.png */,
 				131191BB158058160022A809 /* Icon@2x.png */,
@@ -634,6 +637,7 @@
 				130DAD5115888F1300CB0D8B /* img_flipview_demo_02@2x.png in Resources */,
 				1397128B158BFED5004145B0 /* img_tooltip_demo_iphone.png in Resources */,
 				1397128C158BFED5004145B0 /* img_tooltip_demo_iphone@2x.png in Resources */,
+				13E1765E161CD1DF00EA2BC0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +743,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "al7ios/al7ios-Prefix.pch";
 				INFOPLIST_FILE = "al7ios/al7ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -750,6 +755,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "al7ios/al7ios-Prefix.pch";
 				INFOPLIST_FILE = "al7ios/al7ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

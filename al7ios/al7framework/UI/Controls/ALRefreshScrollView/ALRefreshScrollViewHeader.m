@@ -46,8 +46,8 @@
         [statusLabel setFont:statusLabelFont];
         [statusLabel setBackgroundColor:[UIColor clearColor]];
         [statusLabel setTextColor:[UIColor whiteColor]];
-        [statusLabel setTextAlignment:UITextAlignmentCenter];
-        [statusLabel setLineBreakMode:UILineBreakModeMiddleTruncation];
+        [statusLabel setTextAlignment:NSTextAlignmentCenter];
+        [statusLabel setLineBreakMode:NSLineBreakByTruncatingMiddle];
         [statusLabel setText:[self normalStateText]];
         [self addSubview:statusLabel];
     }

@@ -47,8 +47,8 @@
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(8.0, 0.0, [self frame].size.width - 16.0, [self frame].size.height)];
         [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0]];
-        [label setTextAlignment:UITextAlignmentCenter];
-        [label setLineBreakMode:UILineBreakModeWordWrap];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        [label setLineBreakMode:NSLineBreakByWordWrapping];
         [label setNumberOfLines:0];
         [label setBackgroundColor:[UIColor clearColor]];
         [label setUserInteractionEnabled:NO];
@@ -103,7 +103,7 @@
     
     if ([ALLayoutUtilities doesDeviceSupportHighResolution]) { 
         scale = 2.0; 
-        resolutionString = [NSString stringWithString:@"@2x"];
+        resolutionString = @"@2x";
     }
     else {
         resolutionString = [NSString string];

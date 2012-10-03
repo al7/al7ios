@@ -30,11 +30,11 @@
     //-- This is how you create a basic text content view;
     UIFont *contentFont = [UIFont fontWithName:@"TrebuchetMS" size:12.0];
     NSString *tooltipContent = @"Surprise! I'm a tooltip. I can hold important help info without obstructing the UI!";
-    CGSize contentSize = [tooltipContent sizeWithFont:contentFont constrainedToSize:CGSizeMake(150.0, 5000.0) lineBreakMode:UILineBreakModeWordWrap];
+    CGSize contentSize = [tooltipContent sizeWithFont:contentFont constrainedToSize:CGSizeMake(150.0, 5000.0) lineBreakMode:NSLineBreakByWordWrapping];
     
     UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, contentSize.width, contentSize.height)];
     [contentLabel setFont:contentFont];
-    [contentLabel setLineBreakMode:UILineBreakModeWordWrap];
+    [contentLabel setLineBreakMode:NSLineBreakByWordWrapping];
     [contentLabel setNumberOfLines:0];
     [contentLabel setBackgroundColor:[UIColor clearColor]];
     [contentLabel setTextColor:[UIColor blackColor]];

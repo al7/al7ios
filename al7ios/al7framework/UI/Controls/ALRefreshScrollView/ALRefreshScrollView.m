@@ -121,7 +121,7 @@
         [errorLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:13.0]];
         [errorLabel setBackgroundColor:[UIColor clearColor]];
         [errorLabel setTextColor:[UIColor whiteColor]];
-        [errorLabel setTextAlignment:UITextAlignmentCenter];
+        [errorLabel setTextAlignment:NSTextAlignmentCenter];
         [errorLabel setText:[self errorText]];
         [self addSubview:errorLabel];
     }

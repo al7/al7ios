@@ -37,7 +37,7 @@
     
     UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(5.0, 0.0, 310.0, 30.0)];
     [headerLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0]];
-    [headerLabel setTextAlignment:UITextAlignmentCenter];
+    [headerLabel setTextAlignment:NSTextAlignmentCenter];
     [headerLabel setBackgroundColor:[UIColor clearColor]];
     [headerLabel setTextColor:[UIColor whiteColor]];
     [headerLabel setShadowColor:[UIColor blackColor]];
@@ -70,7 +70,7 @@
 #pragma mark - Action Targets;
 
 -(void)onOkTouch:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

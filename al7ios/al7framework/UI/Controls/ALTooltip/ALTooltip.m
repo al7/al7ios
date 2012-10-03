@@ -47,16 +47,16 @@
             NSString *badgeImageNameSuffix;
             switch ([self badgeType]) {
                 case ALTooltipBadgeTypeAlert:
-                    badgeImageNameSuffix = [NSString stringWithString:@"Alert"];
+                    badgeImageNameSuffix = @"Alert";
                     break;
                 case ALTooltipBadgeTypeError:
-                    badgeImageNameSuffix = [NSString stringWithString:@"Error"];
+                    badgeImageNameSuffix = @"Error";
                     break;
                 case ALTooltipBadgeTypeInfo:
-                    badgeImageNameSuffix = [NSString stringWithString:@"Info"];
+                    badgeImageNameSuffix = @"Info";
                     break;
                 case ALTooltipBadgeTypeSuccess:
-                    badgeImageNameSuffix = [NSString stringWithString:@"Success"];
+                    badgeImageNameSuffix = @"Success";
                     break;
                 default:
                     badgeImageNameSuffix = [NSString string];
