@@ -131,6 +131,9 @@
         case 2:
             result = @"ALModalMatte";
             break;
+        case 3:
+            result = @"ALTabBox";
+            break;
     }
     return result;
 }
@@ -144,7 +147,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 3;
+    return 4;
 };
 
 #pragma mark - Redirector Methods;
@@ -164,7 +167,11 @@
         case 2:
             targetRootController = nil;
             targetController = [[DemoModalMatteController alloc] init];
-            break;                        
+            break;
+        case 3:
+            targetRootController = nil;
+            targetController = [[DemoTabBoxController alloc] init];
+            break;
         default:
             targetRootController = nil;
             targetController = nil;

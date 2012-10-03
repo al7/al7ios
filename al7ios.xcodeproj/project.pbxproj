@@ -75,6 +75,7 @@
 		13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1397128F158BFF1B004145B0 /* DemoTooltipController.m */; };
 		13971294158C1086004145B0 /* DemoModalMatteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13971293158C1086004145B0 /* DemoModalMatteController.m */; };
 		13E1765E161CD1DF00EA2BC0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E1765D161CD1DF00EA2BC0 /* Default-568h@2x.png */; };
+		13E1766C161CD7D400EA2BC0 /* DemoTabBoxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E1766B161CD7D400EA2BC0 /* DemoTabBoxController.m */; };
 		2BE0930515ACC01E00072B89 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE0930415ACC01E00072B89 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,8 @@
 		13971292158C1086004145B0 /* DemoModalMatteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoModalMatteController.h; path = Demo/ModalMatte/DemoModalMatteController.h; sourceTree = "<group>"; };
 		13971293158C1086004145B0 /* DemoModalMatteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoModalMatteController.m; path = Demo/ModalMatte/DemoModalMatteController.m; sourceTree = "<group>"; };
 		13E1765D161CD1DF00EA2BC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		13E1766A161CD7D400EA2BC0 /* DemoTabBoxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoTabBoxController.h; path = Demo/TabBox/DemoTabBoxController.h; sourceTree = "<group>"; };
+		13E1766B161CD7D400EA2BC0 /* DemoTabBoxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoTabBoxController.m; path = Demo/TabBox/DemoTabBoxController.m; sourceTree = "<group>"; };
 		2BE0930415ACC01E00072B89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -481,6 +484,7 @@
 		131191B015804CA00022A809 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				13E17668161CD7A400EA2BC0 /* TabBox */,
 				13971291158C1043004145B0 /* ModalMatte */,
 				13971287158BFED5004145B0 /* Tooltip */,
 				131191B215804CAD0022A809 /* FlipView */,
@@ -546,6 +550,15 @@
 				13971293158C1086004145B0 /* DemoModalMatteController.m */,
 			);
 			name = ModalMatte;
+			sourceTree = "<group>";
+		};
+		13E17668161CD7A400EA2BC0 /* TabBox */ = {
+			isa = PBXGroup;
+			children = (
+				13E1766A161CD7D400EA2BC0 /* DemoTabBoxController.h */,
+				13E1766B161CD7D400EA2BC0 /* DemoTabBoxController.m */,
+			);
+			name = TabBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -675,6 +688,7 @@
 				131191B815804CFF0022A809 /* DemoFlipViewController.m in Sources */,
 				13971290158BFF1B004145B0 /* DemoTooltipController.m in Sources */,
 				13971294158C1086004145B0 /* DemoModalMatteController.m in Sources */,
+				13E1766C161CD7D400EA2BC0 /* DemoTabBoxController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

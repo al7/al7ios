@@ -12,3 +12,4 @@
 #import "DemoFlipViewController.h"
 #import "DemoTooltipController.h"
 #import "DemoModalMatteController.h"
+#import "DemoTabBoxController.h"
