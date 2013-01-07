@@ -23,5 +23,7 @@
 @interface ALImageUtilities : NSObject
 
 +(UIImage *)getGradientRectangleImageWithSize:(CGSize)aSize startColor:(UIColor *)startColor endColor:(UIColor *)endColor;
++(UIImage *)cropImage:(UIImage *)sourceImage withRectangle:(CGRect)cropRect largestSpan:(CGFloat)largestSpan;
++(UIImage *)cropImage:(UIImage *)sourceImage withRectangle:(CGRect)cropRect;
 
 @end

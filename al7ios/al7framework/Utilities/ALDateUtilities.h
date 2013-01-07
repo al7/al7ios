@@ -73,3 +73,20 @@ typedef enum {
 +(NSString *)durationStringWithTimeInterval:(NSTimeInterval)timeInterval;
 
 @end
+
+#pragma mark - Categories;
+
+@interface NSDate (Utilities)
+
++(NSDate *)dateWithYear:(NSInteger)year
+                  month:(NSInteger)month
+                    day:(NSInteger)day
+                  hours:(NSInteger)hours
+                minutes:(NSInteger)minutes
+                 period:(ALDateTimePeriod)period;
+
++(NSDate *)dateWithYear:(NSInteger)year
+                  month:(NSInteger)month
+                    day:(NSInteger)day;
+
+@end

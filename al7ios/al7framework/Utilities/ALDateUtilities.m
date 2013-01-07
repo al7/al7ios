@@ -278,3 +278,33 @@
 }
 
 @end
+
+#pragma mark - Categories
+
+@implementation NSDate (Utilities)
+
++(NSDate *)dateWithYear:(NSInteger)year
+                  month:(NSInteger)month
+                    day:(NSInteger)day
+                  hours:(NSInteger)hours
+                minutes:(NSInteger)minutes
+                 period:(ALDateTimePeriod)period {
+    
+    return [ALDateUtilities dateWithYear:year
+                                   month:month
+                                     day:day
+                                   hours:hours
+                                 minutes:minutes
+                                  period:period];
+}
+
++(NSDate *)dateWithYear:(NSInteger)year
+                  month:(NSInteger)month
+                    day:(NSInteger)day {
+
+    return [ALDateUtilities dateWithYear:year
+                                   month:month
+                                     day:day];
+}
+
+@end

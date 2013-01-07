@@ -38,6 +38,19 @@
 +(BOOL)doesDeviceSupportHighResolution;
 +(void)setLayerInView:(UIView *)aView withCornerRadius:(CGFloat)aCornerRadius borderWidth:(CGFloat)aBorderWidth borderColor:(UIColor *)aBorderColor;
 +(void)setLayerInView:(UIView *)aView withCornerRadius:(CGFloat)aCornerRadius;
++(void)applyRedBorderToView:(UIView *)aView;
 +(CGFloat)degreesToRadians:(CGFloat)angle;
+
+@end
+
+#pragma mark - Categories;
+
+@interface UIView (LayoutUtilities)
+
+-(void)centerInSuperview;
+-(void)moveToPosition:(CGPoint)newOrigin animated:(BOOL)animated duration:(NSTimeInterval)duration;
+-(void)moveToPosition:(CGPoint)newOrigin animated:(BOOL)animated;
+-(void)moveToPosition:(CGPoint)newOrigin;
+-(CGRect)getMaximumBounds;
 
 @end

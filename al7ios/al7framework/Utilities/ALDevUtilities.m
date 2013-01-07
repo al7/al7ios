@@ -45,20 +45,4 @@
     return minValue + randomIncrement;
 }
 
-+(NSDictionary *)flightSegmentDictionaryWithOrigin:(NSString *)origin 
-                                       destination:(NSString *)destination
-                                     departureDate:(NSDate *)departureDate
-                                       arrivalDate:(NSDate *)arrivalDate
-                                      flightNumber:(NSString *)flightNumber {
-    
-    NSMutableDictionary *fliSegDict = [NSMutableDictionary dictionary];
-    [fliSegDict setObject:origin forKey:@"origin"];
-    [fliSegDict setObject:destination forKey:@"destination"]; 
-    [fliSegDict setObject:flightNumber forKey:@"flightNumber"];
-    [fliSegDict setObject:departureDate forKey:@"departureDate"];
-    [fliSegDict setObject:arrivalDate forKey:@"arrivalDate"];
-    
-    return [NSDictionary dictionaryWithDictionary:fliSegDict];
-}
-
 @end

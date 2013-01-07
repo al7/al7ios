@@ -161,9 +161,48 @@
     [ALLayoutUtilities setLayerInView:aView withCornerRadius:aCornerRadius borderWidth:1.0 borderColor:[UIColor blackColor]];
 }
 
++(void)applyRedBorderToView:(UIView *)aView {
+    [ALLayoutUtilities setLayerInView:aView withCornerRadius:0.0 borderWidth:1.0 borderColor:[UIColor redColor]];
+}
+
 +(CGFloat)degreesToRadians:(CGFloat)angle {
     CGFloat pi = 3.14159265358979323846264338327950288;
     return (angle / 180.0 * pi);
+}
+
+@end
+
+#pragma mark - Categories;
+
+@implementation UIView (LayoutUtilities)
+
+-(void)centerInSuperview {
+    [ALLayoutUtilities centerViewInSuperview:self];
+}
+
+-(void)moveToPosition:(CGPoint)newOrigin animated:(BOOL)animated duration:(NSTimeInterval)duration {
+    void (^moveAnimation)(void) = ^{
+        [ALLayoutUtilities moveView:self toPosition:newOrigin];
+    };
+    
+    if (animated) {
+        [UIView animateWithDuration:duration animations:moveAnimation];
+    }
+    else {
+        moveAnimation();
+    }
+}
+
+-(void)moveToPosition:(CGPoint)newOrigin animated:(BOOL)animated {
+    [self moveToPosition:newOrigin animated:animated duration:0.3];
+}
+
+-(void)moveToPosition:(CGPoint)newOrigin {
+    [self moveToPosition:newOrigin animated:NO];
+}
+
+-(CGRect)getMaximumBounds {
+    return [ALLayoutUtilities getMaximumBoundsInView:self];
 }
 
 @end

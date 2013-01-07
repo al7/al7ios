@@ -56,4 +56,45 @@
     return result;
 }
 
++(UIImage *)cropImage:(UIImage *)sourceImage withRectangle:(CGRect)cropRect largestSpan:(CGFloat)largestSpan {
+    //-- Declare variables;
+    CGFloat cropScale = 1.0;
+    CGSize outputImageSize = CGSizeZero;
+    
+    //-- Calculate new image size;
+    if (cropRect.size.width > cropRect.size.height) {
+        cropScale = largestSpan / cropRect.size.width;
+    }
+    else {
+        cropScale = largestSpan / cropRect.size.height;
+    }
+    outputImageSize.width = cropRect.size.width * cropScale;
+    outputImageSize.height = cropRect.size.height * cropScale;
+    
+    //-- draw image;
+    UIGraphicsBeginImageContextWithOptions(outputImageSize, NO, 1.0);
+    CGContextRef outputImageContext = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(outputImageContext);
+    CGContextTranslateCTM(outputImageContext, 0.0, largestSpan);
+    CGContextScaleCTM(outputImageContext, 1.0, -1.0);
+    
+    CGImageRef sourceImageRef = [sourceImage CGImage];
+    CGImageRef croppedImageRef = CGImageCreateWithImageInRect(sourceImageRef, cropRect);
+    CGContextDrawImage(outputImageContext, CGRectMake(0.0, 0.0, outputImageSize.width, outputImageSize.height), croppedImageRef);
+    CGImageRelease(croppedImageRef);
+    
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRestoreGState(outputImageContext);
+    UIGraphicsEndImageContext();
+    return outputImage;
+}
+
++(UIImage *)cropImage:(UIImage *)sourceImage withRectangle:(CGRect)cropRect {
+    CGFloat largestSpan = ([sourceImage size].width > [sourceImage size].height) ? [sourceImage size].height : [sourceImage size].width;
+    return [ALImageUtilities cropImage:sourceImage
+                            withRectangle:cropRect
+                              largestSpan:largestSpan];
+}
+
 @end
