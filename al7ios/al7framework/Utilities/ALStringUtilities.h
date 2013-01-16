@@ -34,11 +34,16 @@ typedef enum {
 +(NSString *)getSpecialCharacterOfType:(ALStringSpecialCharacterType)type;
 +(NSString *)generateGUIDwithNumberOfCharacters:(NSUInteger)numberOfCharacters;
 +(NSString *)generateGUID;
++(NSString *)stringForIntegerSeparatedByCommas:(NSInteger)integer;
 
 @end
 
 @interface NSString (StringUtilities)
 
 +(NSString *)specialCharacterOfType:(ALStringSpecialCharacterType)type;
++(NSString *)registeredMark;
++(NSString *)trademark;
++(NSString *)copyright;
++(NSString *)pi;
 
 @end

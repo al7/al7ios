@@ -59,12 +59,38 @@
     return [ALStringUtilities generateGUIDwithNumberOfCharacters:12];
 }
 
++(NSString *)stringForIntegerSeparatedByCommas:(NSInteger)integer {
+    NSString *result = @"0";
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    [nf setGroupingSize:3];
+    [nf setGroupingSeparator:@","];
+    [nf setUsesGroupingSeparator:YES];
+    result = [nf stringFromNumber:[NSNumber numberWithInt:integer]];
+    return result;
+}
+
 @end
 
 @implementation NSString (StringUtilities)
 
 +(NSString *)specialCharacterOfType:(ALStringSpecialCharacterType)type {
     return [ALStringUtilities getSpecialCharacterOfType:type];
+}
+
++(NSString *)registeredMark {
+    return [ALStringUtilities getSpecialCharacterOfType:ALStringSpecialCharacterTypeRegisteredMark];
+}
+
++(NSString *)trademark {
+    return [ALStringUtilities getSpecialCharacterOfType:ALStringSpecialCharacterTypeTrademark];
+}
+
++(NSString *)copyright {
+    return [ALStringUtilities getSpecialCharacterOfType:ALStringSpecialCharacterTypeCopyright];
+}
+
++(NSString *)pi {
+    return [ALStringUtilities getSpecialCharacterOfType:ALStringSpecialCharacterTypePi];
 }
 
 @end
