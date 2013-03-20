@@ -170,6 +170,53 @@
     return (angle / 180.0 * pi);
 }
 
++(void)setShadowInView:(UIView *)aView withColor:(UIColor *)shadowColor radius:(CGFloat)shadowRadius offset:(CGSize)shadowOffset opacity:(CGFloat)shadowOpacity {
+    if (aView) {
+        CALayer *layer = [aView layer];
+        [layer setShadowColor:[shadowColor CGColor]];
+        [layer setShadowRadius:shadowRadius];
+        [layer setShadowOffset:shadowOffset];
+        [layer setShadowOpacity:shadowOpacity];
+    }
+}
+
++(CGSize)sizeProportionalToSize:(CGSize)originalSize withMaximumSpan:(CGFloat)maximumSpan {
+    CGSize result = originalSize;
+    CGFloat proportionPct = 1.0;
+    if (originalSize.width > originalSize.height) {
+        proportionPct = maximumSpan / originalSize.height;
+    }
+    else {
+        proportionPct = maximumSpan / originalSize.width;
+    }
+    
+    result.width = originalSize.width * proportionPct;
+    result.height = originalSize.height * proportionPct;
+    
+    return result;
+}
+
++(void)bounceView:(UIView *)view withMinScale:(CGFloat)minScale maxScale:(CGFloat)maxScale duration:(NSTimeInterval)duration {
+    CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    [bounceAnimation setDelegate:self];
+    NSMutableArray *bounceValues = [NSMutableArray array];
+    [bounceValues addObject:[NSNumber numberWithFloat:1.0]];
+    [bounceValues addObject:[NSNumber numberWithFloat:minScale]];
+    [bounceValues addObject:[NSNumber numberWithFloat:maxScale]];
+    [bounceValues addObject:[NSNumber numberWithFloat:1.0]];
+    [bounceAnimation setValues:bounceValues];
+    [bounceAnimation setDuration:duration];
+    [[view layer] addAnimation:bounceAnimation forKey:@"bounceAnimation"];
+}
+
++(void)bounceView:(UIView *)view withMinScale:(CGFloat)minScale maxScale:(CGFloat)maxScale {
+    [ALLayoutUtilities bounceView:view withMinScale:minScale maxScale:maxScale duration:0.3];
+}
+
++(void)bounceView:(UIView *)view {
+    [ALLayoutUtilities bounceView:view withMinScale:0.8 maxScale:1.2];
+}
+
 @end
 
 #pragma mark - Categories;

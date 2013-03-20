@@ -40,6 +40,11 @@
 +(void)setLayerInView:(UIView *)aView withCornerRadius:(CGFloat)aCornerRadius;
 +(void)applyRedBorderToView:(UIView *)aView;
 +(CGFloat)degreesToRadians:(CGFloat)angle;
++(void)setShadowInView:(UIView *)aView withColor:(UIColor *)shadowColor radius:(CGFloat)shadowRadius offset:(CGSize)shadowOffset opacity:(CGFloat)shadowOpacity;
++(CGSize)sizeProportionalToSize:(CGSize)originalSize withMaximumSpan:(CGFloat)maximumSpan;
++(void)bounceView:(UIView *)view withMinScale:(CGFloat)minScale maxScale:(CGFloat)maxScale duration:(NSTimeInterval)duration;
++(void)bounceView:(UIView *)view withMinScale:(CGFloat)minScale maxScale:(CGFloat)maxScale;
++(void)bounceView:(UIView *)view;
 
 @end
 
