@@ -25,7 +25,8 @@ typedef enum {
     ALBubbleViewColorSchemeLightGray,
     ALBubbleViewColorSchemeLightBlue,
     ALBubbleViewColorSchemeLightGreen,
-    ALBubbleViewColorSchemeLightRed
+    ALBubbleViewColorSchemeLightRed,
+    ALBubbleViewColorSchemeModernGray
 } ALBubbleViewColorScheme;
 
 typedef enum {

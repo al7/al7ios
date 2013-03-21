@@ -154,7 +154,12 @@
             borderColor = [ALColorUtilities rgbColorWithRed:204 green:0 blue:0 alpha:1.0];
             topColor = [ALColorUtilities rgbColorWithRed:255 green:204 blue:204 alpha:1.0];
             bottomColor = [ALColorUtilities rgbColorWithRed:255 green:255 blue:255 alpha:1.0];
-            break;            
+            break;
+        case ALBubbleViewColorSchemeModernGray:
+            borderColor = [ALColorUtilities rgbColorWithRed:150 green:160 blue:170 alpha:1.0];
+            topColor = [ALColorUtilities rgbColorWithRed:255 green:255 blue:255 alpha:1.0];
+            bottomColor = [ALColorUtilities rgbColorWithRed:225 green:225 blue:225 alpha:1.0];
+            break;
         default:
             borderColor = [ALColorUtilities rgbColorWithRed:255 green:204 blue:0 alpha:1.0];
             topColor = [ALColorUtilities rgbColorWithRed:255 green:255 blue:204 alpha:1.0];
