@@ -40,7 +40,7 @@ typedef enum {
 
 }
 
-@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, unsafe_unretained) UIView *contentView;
 @property (nonatomic, assign) ALBubbleViewColorScheme colorScheme;
 @property (nonatomic, assign) ALBubbleViewBubbleHandleOrientation bubbleHandleOrientation;
 @property (nonatomic, assign) BOOL hasDropDownShadow;
