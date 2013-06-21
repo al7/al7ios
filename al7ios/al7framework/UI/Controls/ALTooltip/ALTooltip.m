@@ -36,6 +36,7 @@
         [self setBubbleContentView:aBubbleContentView];
         [self setTooltipView:aTooltipView];
         [self setSpotlightRadius:150.0];
+        [self setMatteOpacity:0.7];
         [self setColorScheme:aColorScheme];
         [self setBadgeType:aBadgeType];
         
@@ -129,6 +130,7 @@
         ALModalMatte *newModalMatte = [[ALModalMatte alloc] initWithGradientCenter:CGPointMake(tooltipCenterX, tooltipCenterY)
                                                                     gradientRadius:[self spotlightRadius]];
         [newModalMatte setAlpha:0.0];
+        [newModalMatte setMatteOpacity:[self matteOpacity]];
         [[self window] addSubview:newModalMatte];
         [self setModalMatte:newModalMatte];
         
