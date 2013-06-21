@@ -22,6 +22,18 @@
 #import "ALBubbleView.h"
 #import "ALModalMatte.h"
 
+@class ALTooltip;
+
+@protocol ALTooltipDelegate <NSObject>
+
+@optional
+-(void)tooltipBubbleWillShow:(ALTooltip *)tooltip;
+-(void)tooltipBubbleDidShow:(ALTooltip *)tooltip;
+-(void)tooltipBubbleWillHide:(ALTooltip *)tooltip;
+-(void)tooltipBubbleDidHide:(ALTooltip *)tooltip;
+
+@end
+
 typedef enum {
     ALTooltipBadgeTypeNone,
     ALTooltipBadgeTypeInfo,
@@ -34,6 +46,7 @@ typedef enum {
 
 }
 
+@property (unsafe_unretained, nonatomic) id <ALTooltipDelegate> delegate;
 @property (nonatomic, strong) UIView *tooltipView;
 @property (nonatomic, strong) UIView *bubbleContentView;
 @property (nonatomic, assign) CGFloat spotlightRadius;
@@ -42,6 +55,7 @@ typedef enum {
 @property (nonatomic, assign) ALBubbleViewColorScheme colorScheme;
 @property (nonatomic, unsafe_unretained) ALBubbleView *bubble;
 @property (nonatomic, unsafe_unretained) ALModalMatte *modalMatte;
+@property (assign, nonatomic) BOOL bubbleContentUserInteractionEnabled;
 
 #pragma mark - Initializers;
 

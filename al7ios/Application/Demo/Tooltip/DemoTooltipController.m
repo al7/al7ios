@@ -41,6 +41,7 @@
     [contentLabel setText:tooltipContent];
     
     [self setTooltip:[[ALTooltip alloc] initWithBubbleContent:contentLabel tooltipView:tooltipImageView]];
+    [[self tooltip] setBubbleContentUserInteractionEnabled:YES];
     [contentView addSubview:[self tooltip]];
     [ALLayoutUtilities centerViewInSuperview:[self tooltip]];
     

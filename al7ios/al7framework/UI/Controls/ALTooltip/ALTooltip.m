@@ -39,6 +39,7 @@
         [self setMatteOpacity:0.7];
         [self setColorScheme:aColorScheme];
         [self setBadgeType:aBadgeType];
+        [self setBubbleContentUserInteractionEnabled:NO];
         
         //- build view hierarchy;
         [[self tooltipView] setUserInteractionEnabled:NO];
@@ -134,10 +135,16 @@
         [[self window] addSubview:newModalMatte];
         [self setModalMatte:newModalMatte];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onModalMatteTouchesBegan) name:ALModalMatteTouchesBeganNotification object:[self modalMatte]];        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onModalMatteTouchesBegan)
+                                                     name:ALModalMatteTouchesBeganNotification
+                                                   object:[self modalMatte]];
         
-        ALBubbleView *newBubble = [[ALBubbleView alloc] initWithContentView:[self bubbleContentView] colorScheme:[self colorScheme] bubbleHandleOrientation:bubbleOrientation bubbleHandlePosition:bubbleHandlePosition];
-        [newBubble setUserInteractionEnabled:NO];
+        ALBubbleView *newBubble = [[ALBubbleView alloc] initWithContentView:[self bubbleContentView]
+                                                                colorScheme:[self colorScheme]
+                                                    bubbleHandleOrientation:bubbleOrientation
+                                                       bubbleHandlePosition:bubbleHandlePosition];
+        [newBubble setUserInteractionEnabled:[self bubbleContentUserInteractionEnabled]];
         [ALLayoutUtilities moveView:newBubble toPosition:CGPointMake(bubbleX, bubbleY)];
         [newBubble setAlpha:0.0];
         [[self window] addSubview:newBubble];
@@ -145,6 +152,11 @@
 
         //- fade bubble and modal matte in;
         [[NSNotificationCenter defaultCenter] postNotificationName:ALTooltipWillShowBubbleNotification object:self];
+        if ([self delegate]) {
+            if ([[self delegate] respondsToSelector:@selector(tooltipBubbleWillShow:)]) {
+                [[self delegate] tooltipBubbleWillShow:self];
+            }
+        }
         
         CAKeyframeAnimation *bubbleBounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
         NSMutableArray *bubbleBounceValues = [NSMutableArray array];
@@ -161,6 +173,11 @@
             [newModalMatte setAlpha:1.0];
         } completion:^(BOOL finished){
             [[NSNotificationCenter defaultCenter] postNotificationName:ALTooltipDidShowBubbleNotification object:self];
+            if ([self delegate]) {
+                if ([[self delegate] respondsToSelector:@selector(tooltipBubbleDidShow:)]) {
+                    [[self delegate] tooltipBubbleDidShow:self];
+                }
+            }
         }];
     }    
 }
@@ -168,7 +185,12 @@
 -(void)hideBubble {
     if ([self bubble]) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:ALModalMatteTouchesBeganNotification object:[self modalMatte]];                    
-        [[NSNotificationCenter defaultCenter] postNotificationName:ALTooltipWillHideBubbleNotification object:self];        
+        [[NSNotificationCenter defaultCenter] postNotificationName:ALTooltipWillHideBubbleNotification object:self];
+        if ([self delegate]) {
+            if ([[self delegate] respondsToSelector:@selector(tooltipBubbleWillHide:)]) {
+                [[self delegate] tooltipBubbleWillHide:self];
+            }
+        }
         [UIView animateWithDuration:0.2 animations:^{
             [[self modalMatte] setAlpha:0.0];
             [[self bubble] setAlpha:0.0];
@@ -177,7 +199,12 @@
             [[self modalMatte] removeFromSuperview];            
             [self setBubble:nil];
             [self setModalMatte:nil];
-            [[NSNotificationCenter defaultCenter] postNotificationName:ALTooltipDidHideBubbleNotification object:self];            
+            [[NSNotificationCenter defaultCenter] postNotificationName:ALTooltipDidHideBubbleNotification object:self];
+            if ([self delegate]) {
+                if ([[self delegate] respondsToSelector:@selector(tooltipBubbleDidHide:)]) {
+                    [[self delegate] tooltipBubbleDidHide:self];
+                }
+            }
         }];
     }
 }
