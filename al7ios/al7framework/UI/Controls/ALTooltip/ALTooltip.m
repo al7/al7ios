@@ -35,6 +35,7 @@
         [self setBackgroundColor:[UIColor clearColor]];
         [self setBubbleContentView:aBubbleContentView];
         [self setTooltipView:aTooltipView];
+        [self setSpotlightRadius:150.0];
         [self setColorScheme:aColorScheme];
         [self setBadgeType:aBadgeType];
         
@@ -125,7 +126,8 @@
         }
         
         //- create and place bubble and modal matte;
-        ALModalMatte *newModalMatte = [[ALModalMatte alloc] initWithGradientCenter:CGPointMake(tooltipCenterX, tooltipCenterY) gradientRadius:150.0];
+        ALModalMatte *newModalMatte = [[ALModalMatte alloc] initWithGradientCenter:CGPointMake(tooltipCenterX, tooltipCenterY)
+                                                                    gradientRadius:[self spotlightRadius]];
         [newModalMatte setAlpha:0.0];
         [[self window] addSubview:newModalMatte];
         [self setModalMatte:newModalMatte];

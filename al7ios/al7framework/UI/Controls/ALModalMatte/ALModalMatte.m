@@ -35,6 +35,7 @@
     self = [super initWithFrame:[[UIScreen mainScreen] bounds]];
     if (self) {
         //- set properties;
+        [self setMatteOpacity:0.7];
         [self setGradientCenter:aGradientCenter];
         [self setGradientRadius:aGradientRadius];
         [self setBackgroundColor:[UIColor clearColor]];
@@ -56,7 +57,7 @@
     CGFloat locations[] = {0.0, 1.0};
     CGFloat colors[] = {
         0.0, 0.0, 0.0, 0.0,//- black 0%;
-        0.0, 0.0, 0.0, 0.7 //- black 70%;        
+        0.0, 0.0, 0.0, [self matteOpacity] //- black 70%;
     };
     CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, colors, locations, 2);
     

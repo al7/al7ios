@@ -36,6 +36,7 @@ typedef enum {
 
 @property (nonatomic, strong) UIView *tooltipView;
 @property (nonatomic, strong) UIView *bubbleContentView;
+@property (nonatomic, assign) CGFloat spotlightRadius;
 @property (nonatomic, assign) ALTooltipBadgeType badgeType;
 @property (nonatomic, assign) ALBubbleViewColorScheme colorScheme;
 @property (nonatomic, unsafe_unretained) ALBubbleView *bubble;

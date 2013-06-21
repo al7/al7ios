@@ -27,6 +27,7 @@
 
 @property (nonatomic, assign) CGPoint gradientCenter;
 @property (nonatomic, assign) CGFloat gradientRadius;
+@property (nonatomic, assign) CGFloat matteOpacity;
 @property (nonatomic, unsafe_unretained) id targetView;
 
 #pragma mark - Initializers;
