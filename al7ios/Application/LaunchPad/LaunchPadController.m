@@ -55,8 +55,10 @@
 #pragma mark - View lifecycle
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {  
-    UIView *myView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+- (void)loadView {
+    BOOL isIos7 = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0");
+    
+    UIView *myView = [[UIView alloc] initWithFrame:(isIos7) ? [[UIScreen mainScreen] bounds] : [[UIScreen mainScreen] applicationFrame]];
     [myView setBackgroundColor:[ALColorUtilities rgbColorWithRed:0 green:51 blue:153 alpha:1.0]];
     [self setView:myView];
 
@@ -68,7 +70,10 @@
     [pickerView setDelegate:self];
     [pickerView setShowsSelectionIndicator:YES];
     [pickerView selectRow:selectedScreenIndex inComponent:0 animated:YES];
-    [ALLayoutUtilities moveView:pickerView toPosition:CGPointMake(0.0, [myView frame].size.height - [pickerView frame].size.height - 85.0)];
+    [pickerView moveToPosition:CGPointMake(0.0, [myView frame].size.height - [pickerView frame].size.height - 85.0)];
+    if (isIos7) {
+        [pickerView setBackgroundColor:[UIColor whiteColor]];
+    }
     [[self view] addSubview:pickerView];
     
     UIFont *labelFont = [UIFont fontWithName:@"TrebuchetMS-Bold" size:16.0];
@@ -104,6 +109,16 @@
     [memButton setTitle:@"MEM" forState:UIControlStateNormal];
     [memButton addTarget:self action:@selector(onMemButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     [[self view] addSubview:memButton];
+    
+    if (isIos7) {
+        for (UIView *view in [[self view] subviews]) {
+            if ([view isKindOfClass:[UIButton class]]) {
+                UIButton *button = (UIButton *)view;
+                [button setBackgroundColor:[UIColor whiteColor]];
+                [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            }
+        }
+    }
 }
 
 - (void)viewDidUnload

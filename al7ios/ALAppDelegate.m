@@ -18,7 +18,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [self setLaunchPadController:[[LaunchPadController alloc] init]];
-    [[self window] addSubview:[[self launchPadController] view]];
+    [[self window] setRootViewController:[self launchPadController]];
     [[self window] setBackgroundColor:[UIColor blackColor]];
     [[self window] makeKeyAndVisible];
     return YES;

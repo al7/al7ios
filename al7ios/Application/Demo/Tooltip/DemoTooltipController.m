@@ -25,6 +25,8 @@
 #pragma mark - Base Overrides;
 
 -(void)buildViewHierarchyInView:(UIView *)contentView {
+    BOOL isIos7 = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0");
+    
     UIImageView *tooltipImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_tooltip_demo_iphone.png"]];
     
     //-- This is how you create a basic text content view;
@@ -50,6 +52,9 @@
     [tooltipColorControl setSelectedSegmentIndex:0];
     [tooltipColorControl setTintColor:[UIColor rgbColorWithRed:0 green:51 blue:153 alpha:1.0]];
     [tooltipColorControl setFrame:CGRectMake(5.0, 340.0, 300.0, 25.0)];
+    if (isIos7) {
+        [tooltipColorControl setTintColor:[UIColor whiteColor]];
+    }
     [tooltipColorControl addTarget:self action:@selector(onColorSegmentChange:) forControlEvents:UIControlEventValueChanged];
     [contentView addSubview:tooltipColorControl];   
 }

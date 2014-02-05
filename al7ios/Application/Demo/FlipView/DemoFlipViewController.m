@@ -22,6 +22,8 @@
 #pragma mark - Base Overrides;
 
 -(void)buildViewHierarchyInView:(UIView *)contentView {
+    BOOL isIos7 = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0");
+    
     UIImageView *demoImageView01 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_flipview_demo_01.png"]];
     UIImageView *demoImageView02 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_flipview_demo_02.png"]];
     NSArray *flipViews = [NSArray arrayWithObjects:demoImageView01, demoImageView02, nil];
@@ -42,11 +44,19 @@
     [segmentedControl setFrame:CGRectMake(5.0, [contentView frame].size.height - 80.0, 300.0, 30.0)];
     [segmentedControl setSelectedSegmentIndex:0];
     [segmentedControl addTarget:self action:@selector(onSelectedSegmentIndexChange:) forControlEvents:UIControlEventValueChanged];
+    if (isIos7) {
+        [segmentedControl setTintColor:[UIColor whiteColor]];
+    }
+    
     [contentView addSubview:segmentedControl];
     
     UIButton *flipButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [flipButton setFrame:CGRectMake(5.0, [contentView frame].size.height - 40.0, 300.0, 40.0)];
     [flipButton setTitle:@"Flip!" forState:UIControlStateNormal];
+    if (isIos7) {
+        [flipButton setBackgroundColor:[UIColor whiteColor]];
+        [flipButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
     [flipButton addTarget:self action:@selector(onFlipButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:flipButton];
 }

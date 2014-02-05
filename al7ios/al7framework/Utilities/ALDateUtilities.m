@@ -43,25 +43,17 @@
     return [ALDateUtilities getFormattedDateStringWithDate:aDate andDateFormat:@"MM-dd-yyyy"];
 }
 
-+(NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hours:(NSInteger)hours minutes:(NSInteger)minutes period:(ALDateTimePeriod)period {
-    NSString *yearString, *monthString, *dayString, *hourString, *minutesString, *periodString;
++(NSDate *)dateWithYear:(NSInteger)year
+                  month:(NSInteger)month
+                    day:(NSInteger)day
+                  hours:(NSInteger)hours
+                minutes:(NSInteger)minutes
+                 period:(ALDateTimePeriod)period {
     
-    if (year < 1970) {
-        year = 1970;
-    }
-    yearString = [NSString stringWithFormat:@"%i", year];
-    
-    if (month < 1) {
-        month = 1;
-    }
-    else if (month > 12) {
-        month = 12;
-    }
-    monthString = [NSString stringWithFormat:@"%i", month];
-    
-    if (day < 1) {
-        day = 1;
-    }
+    year = (year < 1970) ? 1970 : year;
+    month = (month < 1) ? 1 : month;
+    month = (month > 12) ? 12 : month;
+    day = (day < 1) ? 1: day;
     
     if (month == 1 ||
         month == 3 ||
@@ -94,37 +86,35 @@
             }
         }
     }
-    dayString = [NSString stringWithFormat:@"%i", day];
     
-    if (hours > 12) {
-        hours = 12;
-    }
-    else if (hours < 1) {
-        hours = 1;
-    }
-    hourString = [NSString stringWithFormat:@"%i", hours];
+    hours = (hours > 12) ? 12 : hours;
+    hours = (hours < 1) ? 1 : hours;
     
-    if (minutes < 0) {
-        minutes = 0;
-    }
-    if (minutes > 59) {
-        minutes = 59;
-    }
-    minutesString = [NSString stringWithFormat:@"%i", minutes];
-    
+    minutes = (minutes < 0) ? 0 : minutes;
+    minutes = (minutes > 59) ? 59 : minutes;
+
     switch (period) {
         case ALDateTimePeriodAM:
-            periodString = @"AM";
+            hours = (hours == 12) ? 0 : hours;
             break;
         case ALDateTimePeriodPM:
-            periodString = @"PM";
-            break;
-        default:
-            periodString = @"AM";
+            hours += 12;
             break;
     }
-    NSString *formattedDateString = [NSString stringWithFormat:@"%@-%@-%@ %@:%@ %@", yearString, monthString, dayString, hourString, minutesString, periodString];
-    return [ALDateUtilities getDateFromFormattedDateString:formattedDateString];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[NSTimeZone systemTimeZone]];
+    
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setYear:year];
+    [dateComponents setMonth:month];
+    [dateComponents setDay:day];
+    [dateComponents setHour:hours];
+    [dateComponents setMinute:minutes];
+    [dateComponents setSecond:0];
+    [dateComponents setTimeZone:[calendar timeZone]];
+    
+    return [calendar dateFromComponents:dateComponents];
 }
 
 +(NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
